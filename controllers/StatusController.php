@@ -28,7 +28,7 @@ class StatusController
 
     public function save()
     {
-        $this->statusModel->statusMovie($_POST);
+        $this->statusModel->newStatus($_POST);
         header('Location: ?controller=status');
     }
 

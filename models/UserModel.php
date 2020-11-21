@@ -30,6 +30,7 @@ class UserModel
         }
     }
 
+    //Metodo para consultar en BD
     public function getAll()
     {
         try
@@ -43,6 +44,7 @@ class UserModel
         }
     }
 
+    //Metodo para guardar en DB
     public function newUser($data)
     {
         try
@@ -58,6 +60,7 @@ class UserModel
 
     }
 
+    //Metodo para editar BD
     public function getById($id)
     {
         try

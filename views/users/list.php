@@ -25,7 +25,7 @@
                     <th><?php echo $user->status_id ?></th>
                     <th><?php echo $user->rol_id ?></th>
                     <th>
-                        <a href="?controller=user&method=edit&id=<?php echo $user->id; ?>"class="btn btn-light">Editar</a>
+                        <a href="?controller=user&method=edit&id=<?php echo $user->id; ?>" class="btn btn-light">Editar</a>
                     </th>
                     <th>
                         <a href=""class="btn btn-danger">Borrar</a>

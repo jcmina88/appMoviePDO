@@ -24,6 +24,7 @@ class RentalModel
         }
     }
 
+    //Metodo para consultar en BD
     public function getAll()
     {
         try
@@ -37,6 +38,7 @@ class RentalModel
         }
     }
 
+    //Metodo para guardar en DB
     public function newRental($data)
     {
         try
@@ -47,6 +49,38 @@ class RentalModel
         catch(PDOException $e)
         {
             die($e->getMessage());
+        }
+    }
+
+    //Metodo para editar BD
+    public function getById($id)
+    {
+        try
+        {
+            /* : los dos puntos indican que va a consultar
+            un parametro en array */
+            $strSql = "SELECT * FROM rentals WHERE id=:id";
+            $arrayData = ['id' => $id];
+            return $this->pdo->select($strSql, $arrayData);
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
+    public function editRental($data)
+    {
+        try
+        {
+            $strWhere = 'id = '. $data['id'];
+            $table = 'rentals';
+            $this->pdo->update($table, $data, $strWhere);
+
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
         }
     }
 

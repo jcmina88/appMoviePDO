@@ -19,7 +19,7 @@
             <?php foreach($typestatus as $tstatus) : ?>
                 <tr>
                     <th><?php echo $tstatus->name ?></th>
-                    <th><?php echo $tstatus->type_status_id ?></th>
+                    <th><?php echo $tstatus->id ?></th>
                     <th>
                         <a href=""class="btn btn-light">Editar</a>
                     </th>

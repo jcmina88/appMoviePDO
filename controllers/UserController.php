@@ -34,6 +34,7 @@ class UserController
         header('Location: ?controller=user');
     }
 
+    //Metodo para modificación de datos
     public function edit()
     {
         if(isset($_REQUEST['id']))

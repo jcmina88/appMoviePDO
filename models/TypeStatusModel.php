@@ -21,6 +21,7 @@ class TypeStatusModel
         }
     }
 
+    //Metodo para consultar en BD
     public function getAll()
     {
         try
@@ -34,11 +35,12 @@ class TypeStatusModel
         }
     }
 
+    //Metodo para guardar en DB
     public function newTypeStatus($data)
     {
         try
         {
-            $this->pdo->insert("type_statuses_id",$data);
+            $this->pdo->insert("type_statuses",$data);
         }
         catch(PDOException $e)
         {

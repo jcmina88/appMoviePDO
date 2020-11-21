@@ -11,7 +11,7 @@ class MovieController
         $this->movieModel = new movieModel;
     }
 
-    //Clase para direccionar/controlar las vistas
+    //Metodo para direccionar/controlar las vistas
     public function index()
     {
         $movies = $this->movieModel->getAll();
@@ -19,7 +19,7 @@ class MovieController
         require 'views/movies/list.php';
     }
 
-    //Clase para controlar guardado datos en la BD 
+    //Metodo para controlar guardado datos en la BD 
     public function new()
     {
         require 'views/layout.php';
@@ -30,6 +30,38 @@ class MovieController
     {
         $this->movieModel->newMovie($_POST);
         header('Location: ?controller=movie');
+    }
+
+    //Metodo para modificación de datos
+    public function edit()
+    {
+        if(isset($_REQUEST['id']))
+        {
+            $id = $_REQUEST['id'];
+
+            $movie = $this->movieModel->getById($id);
+
+            require 'views/layout.php';
+            require 'views/movies/edit.php';
+        }
+        else
+        {
+            echo "Pelicula no encontrada.";
+        }
+    }
+
+    public function update()
+    {
+        if(isset($_POST))
+        {
+            $id = $_REQUEST['id'];
+            $this->movieModel->editMovie($_POST);
+            header('Location: ?controller=movie');
+        }
+        else
+        {
+            echo "Error, operación no permitida.";
+        }
     }
 
 }

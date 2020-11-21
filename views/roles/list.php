@@ -4,7 +4,7 @@
     </section>
 
     <section class="col-md-8 table-responsive">
-    <a href="" class="btn btn-primary">Agregar rol</a>
+    <a href="?controller=rol&method=new" class="btn btn-primary">Agregar rol</a>
 
         <table class="table table-hover table-dark">
             <thead class="bg-primary">

@@ -23,6 +23,7 @@ class MovieModel
         }
     }
 
+    //Metodo para consultar en BD
     public function getAll()
     {
         try
@@ -36,6 +37,7 @@ class MovieModel
         }
     }
 
+    //Metodo para guardar en DB
     public function newMovie($data)
     {
         try
@@ -46,6 +48,38 @@ class MovieModel
         catch(PDOException $e)
         {
             die($e->getMessage());
+        }
+    }
+
+    //Metodo para editar BD
+    public function getById($id)
+    {
+        try
+        {
+            /* : los dos puntos indican que va a consultar
+            un parametro en array */
+            $strSql = "SELECT * FROM movies WHERE id=:id";
+            $arrayData = ['id' => $id];
+            return $this->pdo->select($strSql, $arrayData);
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
+    public function editMovie($data)
+    {
+        try
+        {
+            $strWhere = 'id = '. $data['id'];
+            $table = 'movies';
+            $this->pdo->update($table, $data, $strWhere);
+
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
         }
     }
 

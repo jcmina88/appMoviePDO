@@ -21,6 +21,7 @@ class StatusModel
         }
     }
 
+    //Metodo para consultar en BD
     public function getAll()
     {
         try
@@ -34,6 +35,7 @@ class StatusModel
         }
     }
 
+    //Metodo para guardar en DB
     public function newStatus($data)
     {
         try

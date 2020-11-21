@@ -27,7 +27,7 @@
                     <th><?php echo $rental->user_id ?></th>
                     <th><?php echo $rental->status_id ?></th>
                     <th>
-                        <a href="?controller=user&method=edit&id=<?php $user ?>"class="btn btn-light">Editar</a>
+                        <a href="?controller=rental&method=edit&id=<?php echo $rental->id; ?>"class="btn btn-light">Editar</a>
                     </th>
                     <th>
                         <a href=""class="btn btn-danger">Borrar</a>

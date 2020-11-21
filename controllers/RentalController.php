@@ -32,4 +32,37 @@ class RentalController
         header('Location: ?controller=rental');
     }
 
+    //Metodo para modificación de datos
+    public function edit()
+    {
+        if(isset($_REQUEST['id']))
+        {
+            $id = $_REQUEST['id'];
+
+            $rental= $this->rentalModel->getById($id);
+
+            require 'views/layout.php';
+            require 'views/rentals/edit.php';
+        }
+        else
+        {
+            echo "El dato no existe.";
+        }
+    }
+
+    //Metodo para guardar la actualización de datos
+    public function update()
+    {
+        if(isset($_POST))
+        {
+            $id = $_REQUEST['id'];
+            $this->rentalModel->editRental($_POST);
+            header('Location: ?controller=rental');
+        }
+        else
+        {
+            echo "Error, operación no permitida.";
+        }
+    }
+
 }

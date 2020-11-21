@@ -27,6 +27,7 @@ class RolModel
         }
     }
 
+    //Metodo para consultar en BD
     public function getAll()
     {
         try
@@ -40,11 +41,11 @@ class RolModel
         }
     }
 
+    //Metodo para guardar en DB
     public function newRol($data)
     {
         try
         {
-            $data['status_id'] = 1;
             $this->pdo->insert("roles",$data);
         }
         catch(PDOException $e)
@@ -53,4 +54,7 @@ class RolModel
         }
 
     }
+
+
+
 }

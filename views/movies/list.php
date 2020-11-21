@@ -25,7 +25,7 @@
                     <th><?php echo $movie->user_id ?></th>
                     <th><?php echo $movie->status_id ?></th>
                     <th>
-                        <a href=""class="btn btn-light">Editar</a>
+                        <a href="?controller=movie&method=edit&id=<?php echo $movie->id; ?>" class="btn btn-light">Editar</a>
                     </th>
                     <th>
                         <a href=""class="btn btn-danger">Borrar</a>

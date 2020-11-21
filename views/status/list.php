@@ -4,7 +4,7 @@
     </section>
 
     <section class="col-md-12 table-responsive">
-    <a href="" class="btn btn-primary">Agregar estado</a>
+    <a href="?controller=status&method=new" class="btn btn-primary">Agregar estado</a>
 
         <table class="table table-hover table-dark">
             <thead class="bg-primary">
