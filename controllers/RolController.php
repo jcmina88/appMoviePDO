@@ -1,35 +1,35 @@
 <?php
 
-require 'models/MovieModel.php';
+require 'models/RolModel.php';
 
-class MovieController
+class RolController
 {
-    private $movieModel;
+    private $RolModel;
 
     public function __construct()
     {
-        $this->movieModel = new movieModel;
+        $this->rolModel = new rolModel;
     }
 
     //Clase para direccionar/controlar las vistas
     public function index()
     {
-        $movies = $this->movieModel->getAll();
+        $roles = $this->rolModel->getAll();
         require 'views/layout.php';
-        require 'views/movies/list.php';
+        require 'views/roles/list.php';
     }
 
     //Clase para controlar guardado datos en la BD 
     public function new()
     {
         require 'views/layout.php';
-        require 'views/movies/new.php';
+        require 'views/roles/new.php';
     }
 
     public function save()
     {
-        $this->movieModel->newMovie($_POST);
-        header('Location: ?controller=movie');
+        $this->rolModel->newRol($_POST);
+        header('Location: ?controller=rol');
     }
 
 }

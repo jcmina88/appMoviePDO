@@ -67,4 +67,39 @@ class Database extends PDO
         }
     }
 
+    public function update($table, $data, $where)
+    {
+        try
+        {
+            //Ordenar array por key
+            ksort($data);
+            
+            $fieldDetails = '';
+            foreach($data as $key => $value)
+            {
+                //( .= ) contatena y lo guarda en el mismo valor
+                // ( : ) Especifica el valor
+                $fieldDetails .="`$key` = :$key,"; 
+            }
+
+            //rtrim quita el elemento un espacio a la derecha
+            $fieldDetails = rtrim($fieldDetails, ',');
+
+            $query = $this->prepare("UPDATE $table SET $fieldDetails WHERE $where");
+
+            foreach($data as $key => $value)
+            {
+                $query->bindValue(":$key", $value);
+            }
+
+            $query->execute();
+
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage());
+        }
+    }  
+
+
 }

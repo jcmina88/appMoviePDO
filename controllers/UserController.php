@@ -34,5 +34,37 @@ class UserController
         header('Location: ?controller=user');
     }
 
+    public function edit()
+    {
+        if(isset($_REQUEST['id']))
+        {
+            $id = $_REQUEST['id'];
+
+            $user= $this->userModel->getById($id);
+
+            require 'views/layout.php';
+            require 'views/users/edit.php';
+        }
+        else
+        {
+            echo "El usuario no existe.";
+        }
+    }
+
+    public function update()
+    {
+        if(isset($_POST))
+        {
+            $id = $_REQUEST['id'];
+            $this->userModel->editUser($_POST);
+            header('Location: ?controller=user');
+        }
+        else
+        {
+            echo "Error, operación no permitida.";
+        }
+    }
+
 }
+
 

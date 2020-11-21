@@ -28,6 +28,7 @@
                         <input type="text" name="rol_id" class="form-control" placeholder="Ingrese rol a asignar">
                     </div>
                     <div>
+                        <a href="?controller=user" class="btn btn-light">Volver</a>
                         <button class="btn btn-primary">Guardar</button>
                     </div>
                 </form>

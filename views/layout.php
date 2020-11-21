@@ -24,6 +24,19 @@
                         <a class="nav-link" href="?controller=movie">Peliculas</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="?controller=rental">Alquiler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?controller=status">Estados</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="?controller=typestatus">Tipos de estado</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?controller=rol">Roles de usuario</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="?controller=welcome">Cerrar sesión</a>
                     </li>
                 </ul>

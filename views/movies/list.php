@@ -1,6 +1,6 @@
 <main class="container">
     <section class="col-md-12 text-center my-4">
-        <h1>Lista de usuarios</h1>    
+        <h1>Lista de peliculas</h1>    
     </section>
 
     <section class="col-md-12 table-responsive">

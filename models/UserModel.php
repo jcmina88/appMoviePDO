@@ -57,5 +57,37 @@ class UserModel
         }
 
     }
+
+    public function getById($id)
+    {
+        try
+        {
+            /* : los dos puntos indican que va a consultar
+            un parametro en array */
+            $strSql = "SELECT * FROM users WHERE id=:id";
+            $arrayData = ['id' => $id];
+            return $this->pdo->select($strSql, $arrayData);
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
+    public function editUser($data)
+    {
+        try
+        {
+            $strWhere = 'id = '. $data['id'];
+            $table = 'users';
+            $this->pdo->update($table, $data, $strWhere);
+
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
 }
 
