@@ -34,7 +34,7 @@
                         <a class="nav-link" href="?controller=typestatus">Tipos de estado</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?controller=rol">Roles de usuario</a>
+                        <a class="nav-link" href="?controller=rol">Roles</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?controller=welcome">Cerrar sesión</a>

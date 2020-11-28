@@ -84,4 +84,19 @@ class RentalModel
         }
     }
 
+    public function deleteRental($data)
+    {
+        try
+        {
+            $strWhere = 'id = '. $data['id'];
+            $table = 'rentals';
+            $this->pdo->delete($table, $strWhere);
+
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
 }

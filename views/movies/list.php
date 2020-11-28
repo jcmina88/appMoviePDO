@@ -28,7 +28,7 @@
                         <a href="?controller=movie&method=edit&id=<?php echo $movie->id; ?>" class="btn btn-light">Editar</a>
                     </th>
                     <th>
-                        <a href=""class="btn btn-danger">Borrar</a>
+                        <a href="?controller=movie&method=delete&id=<?php echo $movie->id; ?>"class="btn btn-danger">Borrar</a>
                     </th>
                 </tr>
             <?php endforeach ?>

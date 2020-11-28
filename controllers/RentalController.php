@@ -65,4 +65,10 @@ class RentalController
         }
     }
 
+    public function delete()
+    {
+        $this->rentalModel->deleteRental($_REQUEST);
+        header('Location: ?controller=rental');
+    }
+
 }

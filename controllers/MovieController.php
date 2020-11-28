@@ -64,4 +64,11 @@ class MovieController
         }
     }
 
+    //Metodo para eliminar datos
+    public function delete()
+    {
+        $this->movieModel->deleteMovie($_REQUEST);
+        header('Location: ?controller=movie');        
+    }
+    
 }

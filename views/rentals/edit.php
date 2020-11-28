@@ -30,7 +30,7 @@
                         <input type="number" name="user_id" class="form-control" placeholder="Ingrese usuario" value="<?php echo $rental[0]->user_id; ?>">
                     </div>
                     <div>
-                        <a href="?controller=user" class="btn btn-light">Volver</a>
+                        <a href="?controller=rental" class="btn btn-light">Volver</a>
                         <button class="btn btn-primary">Modificar</button>
                     </div>
                 </form>

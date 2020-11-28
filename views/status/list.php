@@ -21,10 +21,10 @@
                     <th><?php echo $status->name ?></th>
                     <th><?php echo $status->type_status_id ?></th>
                     <th>
-                        <a href=""class="btn btn-light">Editar</a>
+                        <a href="?controller=status&method=edit&id=<?php echo $status->id; ?>"class="btn btn-light">Editar</a>
                     </th>
                     <th>
-                        <a href=""class="btn btn-danger">Borrar</a>
+                        <a href="?controller=status&method=delete&id=<?php echo $status->id; ?>"class="btn btn-danger">Borrar</a>
                     </th>
                 </tr>
             <?php endforeach ?>

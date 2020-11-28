@@ -27,7 +27,7 @@
                         <input type="text" name="user_id" class="form-control" placeholder="Ingrese usuario">
                     </div>
                     <div>
-                        <a href="?controller=user" class="btn btn-light">Volver</a>
+                        <a href="?controller=rental" class="btn btn-light">Volver</a>
                         <button class="btn btn-primary">Guardar</button>
                     </div>
                 </form>

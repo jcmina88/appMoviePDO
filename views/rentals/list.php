@@ -30,7 +30,7 @@
                         <a href="?controller=rental&method=edit&id=<?php echo $rental->id; ?>"class="btn btn-light">Editar</a>
                     </th>
                     <th>
-                        <a href=""class="btn btn-danger">Borrar</a>
+                        <a href="?controller=rental&method=delete&id=<?php echo $rental->id; ?>"class="btn btn-danger">Borrar</a>
                     </th>
                 </tr>
             <?php endforeach ?>

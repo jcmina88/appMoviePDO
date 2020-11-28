@@ -83,4 +83,20 @@ class MovieModel
         }
     }
 
+    //Metodo para borrado de información en DB
+    public function deleteMovie($data)
+    {
+        try
+        {
+            $strWhere = 'id = '. $data['id'];
+            $table = 'movies';
+            $this->pdo->delete($table, $strWhere);
+    
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+    
 }

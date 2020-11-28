@@ -11,8 +11,6 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Estado</th>
-                    <th>Acción</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -20,12 +18,6 @@
                 <tr>
                     <th><?php echo $rol->name ?></th>
                     <th><?php echo $rol->status_id ?></th>
-                    <th>
-                        <a href=""class="btn btn-light">Editar</a>
-                    </th>
-                    <th>
-                        <a href=""class="btn btn-danger">Borrar</a>
-                    </th>
                 </tr>
             <?php endforeach ?>
             </tbody>

@@ -49,4 +49,52 @@ class StatusModel
         }
     }
 
+    //Metodo para editar BD
+    public function getById($id)
+    {
+        try
+        {
+            /* : los dos puntos indican que va a consultar
+            un parametro en array */
+            $strSql = "SELECT * FROM statuses WHERE id=:id";
+            $arrayData = ['id' => $id];
+            return $this->pdo->select($strSql, $arrayData);
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
+    public function editStatus($data)
+    {
+        try
+        {
+            $strWhere = 'id = '. $data['id'];
+            $table = 'statuses';
+            $this->pdo->update($table, $data, $strWhere);
+
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
+    //Metodo para borrado de información en DB
+    public function deleteStatus($data)
+    {
+        try
+        {
+            $strWhere = 'id = '. $data['id'];
+            $table = 'statuses';
+            $this->pdo->delete($table, $strWhere);
+
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+    
 }

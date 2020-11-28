@@ -66,6 +66,13 @@ class UserController
         }
     }
 
+    //Metodo para eliminar datos
+    public function delete()
+    {
+        $this->userModel->deleteUser($_REQUEST);
+        header('Location: ?controller=user');        
+    }
+
 }
 
 

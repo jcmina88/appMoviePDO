@@ -24,7 +24,7 @@
                         <input type="text" name="user_id" class="form-control" placeholder="Ingrese usuario" value="<?php echo $movie[0]->user_id; ?>">
                     </div>
                     <div>
-                        <a href="?controller=user" class="btn btn-light">Volver</a>
+                        <a href="?controller=movie" class="btn btn-light">Volver</a>
                         <button class="btn btn-primary">Modificar</button>
                     </div>
                 </form>

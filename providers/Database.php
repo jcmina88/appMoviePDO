@@ -67,6 +67,7 @@ class Database extends PDO
         }
     }
 
+    //Metodo para hacer las actualizaciones de la base de datos
     public function update($table, $data, $where)
     {
         try
@@ -100,6 +101,20 @@ class Database extends PDO
             die($e->getMessage());
         }
     }  
+
+    public function delete($table, $where)
+    {
+        try
+        {
+            //Se ejecuta el proceso para eliminar registro en la base de datos
+            return $this->exec("DELETE FROM $table WHERE $where");
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
 
 
 }

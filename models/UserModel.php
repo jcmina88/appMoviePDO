@@ -92,5 +92,21 @@ class UserModel
         }
     }
 
+    //Metodo para borrado de información en DB
+    public function deleteUser($data)
+    {
+        try
+        {
+            $strWhere = 'id = '. $data['id'];
+            $table = 'users';
+            $this->pdo->delete($table, $strWhere);
+
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
 }
 
