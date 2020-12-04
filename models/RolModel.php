@@ -41,4 +41,17 @@ class RolModel
         }
     }
 
+    //Metodo para guardar en DB
+    public function newRol($data)
+    {
+        try
+        {
+            $data['status_id'] = 1;
+            $this->pdo->insert("roles",$data);
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage());
+        }
+    }
 }

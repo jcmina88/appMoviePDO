@@ -4,7 +4,6 @@ class TypeStatusModel
 {
     private $id;
     private $name;
-    private $type_status_id;
     private $pdo;
 
     //Sumario CRUD
@@ -48,4 +47,52 @@ class TypeStatusModel
         }
     }
 
+    //Metodo para editar BD
+    public function getById($id)
+    {
+        try
+        {
+            /* : los dos puntos indican que va a consultar
+            un parametro en array */
+            $strSql = "SELECT * FROM type_statuses WHERE id=:id";
+            $arrayData = ['id' => $id];
+            return $this->pdo->select($strSql, $arrayData);
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
+    public function editTypeStatus($data)
+    {
+        try
+        {
+            $strWhere = 'id = '. $data['id'];
+            $table = 'type_statuses';
+            $this->pdo->update($table, $data, $strWhere);
+
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
+    //Metodo para borrado de información en DB
+    public function deleteTypeStatus($data)
+    {
+        try
+        {
+            $strWhere = 'id = '. $data['id'];
+            $table = 'type_statuses';
+            $this->pdo->delete($table, $strWhere);
+
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+    
 }
