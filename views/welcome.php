@@ -6,13 +6,16 @@
     <title>AppPeliculas</title>
     
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header class="text-center">
-        <h1>Bienvenido</h1>
+        <h1 class="text-white">Bienvenido</h1>
     </header>
     <main class="container">
-        <a href="?controller=welcome&method=home" class="btn btn-primary">Ingrese aquí</a>
+        <div class="wrapper">
+            <a href="?controller=welcome&method=home" class="btn btn-primary">Ingrese aquí</a>
+        </div>
     </main>
 
     <script src="assets/js/jquery.js"></script>

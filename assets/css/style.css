@@ -1,0 +1,15 @@
+body {
+    height: 100vh;
+    background: url("../img/MovieTheater-898266112.jpg") 50% fixed;
+    background-size: cover;
+  }
+  
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 300px;
+    background: rgba(2, 9, 14, 0.85);
+  }
+
