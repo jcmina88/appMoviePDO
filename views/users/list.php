@@ -22,8 +22,8 @@
                 <tr>
                     <th><?php echo $user->name ?></th>
                     <th><?php echo $user->email ?></th>
-                    <th><?php echo $user->status_id ?></th>
-                    <th><?php echo $user->rol_id ?></th>
+                    <th><?php echo $user->status ?></th>
+                    <th><?php echo $user->rol ?></th>
                     <th>
                         <a href="?controller=user&method=edit&id=<?php echo $user->id; ?>" class="btn btn-light">Editar</a>
                     </th>

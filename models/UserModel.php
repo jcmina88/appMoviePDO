@@ -35,7 +35,16 @@ class UserModel
     {
         try
         {
-            $strSql = "SELECT * FROM users";
+            $strSql="   SELECT
+                            u.*,
+                            r.name as rol,
+                            s.name as status
+                        FROM users u
+                        INNER JOIN roles r
+                        ON r.id = u.rol_id
+                        INNER JOIN statuses s
+                        ON s.id = u.status_id
+                    ";
             return $this->pdo->select($strSql);
         }
         catch(PDOException $e)

@@ -1,6 +1,7 @@
 <?php
 
 require 'models/UserModel.php';
+require 'models/RolModel.php';
 
 /*
 * Clase para  controlador de usaurio
@@ -24,6 +25,8 @@ class UserController
     //Clase para crear datos 
     public function new()
     {
+        $rol = new RolModel();
+        $roles = $rol->getAll();
         require 'views/layout.php';
         require 'views/users/new.php';
     }
@@ -42,6 +45,8 @@ class UserController
             $id = $_REQUEST['id'];
 
             $user= $this->userModel->getById($id);
+            $rol = new RolModel();
+            $roles = $rol->getAll();
 
             require 'views/layout.php';
             require 'views/users/edit.php';

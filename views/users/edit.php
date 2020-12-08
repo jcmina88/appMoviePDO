@@ -24,7 +24,22 @@
                     </div>
                     <div class="form-group">
                         <label>Rol</label>
-                        <input type="text" name="rol_id" class="form-control" placeholder="Ingrese rol a asignar" value="<?php echo $user[0]->rol_id; ?>">
+                        <select name="rol_id" class="form-control">
+                            <option value="">Seleccione...</option>
+                            <?php
+                                foreach($roles as $rol)
+                                {
+                                    if($rol->id == $user[0]->rol_id)
+                                    {
+                                        echo '<option selected value="'.$rol->id.'">'.$rol->name.'</option>';
+                                    }
+                                    else
+                                    {
+                                        echo '<option value="'.$rol->id.'">'.$rol->name.'</option>';
+                                    }
+                                }
+                            ?>
+                        </select>
                     </div>
                     <div>
                     <a href="?controller=user" class="btn btn-light">Volver</a>

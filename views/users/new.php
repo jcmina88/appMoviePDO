@@ -25,7 +25,15 @@
                     </div>
                     <div class="form-group">
                         <label>Rol</label>
-                        <input type="text" name="rol_id" class="form-control" placeholder="Ingrese rol a asignar">
+                        <select name="rol_id" class="form-control">
+                            <option value="">Seleccione...</option>
+                            <?php
+                                foreach($roles as $rol)
+                                {
+                                    echo '<option value="'.$rol->id.'">'.$rol->name.'</option>';
+                                }
+                            ?>
+                        </select>
                     </div>
                     <div>
                         <a href="?controller=user" class="btn btn-light">Volver</a>

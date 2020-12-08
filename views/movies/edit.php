@@ -21,7 +21,22 @@
                     </div>
                     <div class="form-group">
                         <label>Usuario</label>
-                        <input type="text" name="user_id" class="form-control" placeholder="Ingrese usuario" value="<?php echo $movie[0]->user_id; ?>">
+                        <select name="rol_id" class="form-control">
+                            <option value="">Seleccione...</option>
+                                <?php
+                                    foreach($users as $user)
+                                    {
+                                        if($user->id == $movie[0]->user_id)
+                                        {
+                                            echo '<option selected value="'.$user->id.'">'.$user->name.'</option>';
+                                        }
+                                        else
+                                        {
+                                            echo '<option value="'.$user->id.'">'.$user->name.'</option>';
+                                        }
+                                    }
+                                ?>
+                        </select>
                     </div>
                     <div>
                         <a href="?controller=movie" class="btn btn-light">Volver</a>

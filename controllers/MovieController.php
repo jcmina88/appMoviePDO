@@ -1,6 +1,8 @@
 <?php
 
 require 'models/MovieModel.php';
+require 'models/UserModel.php';
+require 'models/CategoryModel.php';
 
 class MovieController
 {
@@ -22,14 +24,35 @@ class MovieController
     //Metodo para controlar guardado datos en la BD 
     public function new()
     {
+
+        $user = new UserModel();
+        $users = $user->getAll();
+
+        $category = new CategoryModel();
+        $categories = $category->getAll();
+        
         require 'views/layout.php';
         require 'views/movies/new.php';
     }
 
     public function save()
     {
-        $this->movieModel->newMovie($_POST);
-        header('Location: ?controller=movie');
+        //Organizar array para la tabla de movies
+        $arrayMovie =
+        [
+            'name' => $_POST['name'],
+            'description' => $_POST['description'],
+            'user_id' => $_POST['user_id'],
+            'status_id' => 1,
+        ];
+
+        //Array de las categorias
+        $arrayCategories = $_POST['categories'];
+
+        //Inserción de pelicula
+        $respMovie = $this->movieModel->newMovie($arrayMovie);
+
+        //Inserción detalle category_movie
     }
 
     //Metodo para modificación de datos
@@ -40,6 +63,8 @@ class MovieController
             $id = $_REQUEST['id'];
 
             $movie = $this->movieModel->getById($id);
+            $user = new UserModel();
+            $users = $user->getAll();
 
             require 'views/layout.php';
             require 'views/movies/edit.php';

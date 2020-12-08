@@ -28,7 +28,16 @@ class MovieModel
     {
         try
         {
-            $strSql = "SELECT * FROM movies";
+            $strSql="   SELECT
+                            m.*,
+                            u.name as user,
+                            s.name as status
+                        FROM movies m
+                        INNER JOIN users u
+                        ON u.id = m.user_id
+                        INNER JOIN statuses s
+                        ON s.id = m.status_id
+                    ";
             return $this->pdo->select($strSql);
         }
         catch(PDOException $e)
@@ -42,7 +51,6 @@ class MovieModel
     {
         try
         {
-            $data['status_id'] = 1;
             $this->pdo->insert("movies",$data);
         }
         catch(PDOException $e)

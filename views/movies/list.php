@@ -22,8 +22,8 @@
                 <tr>
                     <th><?php echo $movie->name ?></th>
                     <th><?php echo $movie->description ?></th>
-                    <th><?php echo $movie->user_id ?></th>
-                    <th><?php echo $movie->status_id ?></th>
+                    <th><?php echo $movie->user ?></th>
+                    <th><?php echo $movie->status ?></th>
                     <th>
                         <a href="?controller=movie&method=edit&id=<?php echo $movie->id; ?>" class="btn btn-light">Editar</a>
                     </th>
