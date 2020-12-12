@@ -31,7 +31,7 @@ class CategoryModel
     {
         try
         {
-            $strSql = "SELECT * FROM users";
+            $strSql = "SELECT * FROM categories";
             return $this->pdo->select($strSql);
         }
         catch(PDOException $e)

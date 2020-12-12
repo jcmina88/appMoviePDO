@@ -52,6 +52,7 @@ class MovieModel
         try
         {
             $this->pdo->insert("movies",$data);
+            return true;
         }
         catch(PDOException $e)
         {
@@ -107,4 +108,39 @@ class MovieModel
         }
     }
     
+    public function getLastId()
+    {
+        try
+        {
+            $strSql = "SELECT MAX(id) as id FROM movies";
+            $query = $this->pdo->select($strSql);
+            return $query[0]->id;
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
+    public function saveCategoryMovie($arrayCategories, $lastId)
+    {
+        try
+        {
+            foreach($arrayCategories as $category)
+            {
+                $data =
+                [
+                    'movie_id' => $lastId,
+                    'category_id' => $category[id]
+                ];
+                $this->pdo->insert('category_movie', $data);
+            }
+            return true;
+        }
+        catch(PDOException $e)
+        {
+            die($e->getMessage()); 
+        }
+    }
+
 }

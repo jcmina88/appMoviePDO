@@ -62,7 +62,7 @@ function removeElement(idCategory)
 }
 
 // Metodo para hacer el envío del formulario
-("#submit").click(function(e)
+$("#submit").click(function(e)
 {
     e.preventDefault()
 

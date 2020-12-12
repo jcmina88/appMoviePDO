@@ -52,7 +52,27 @@ class MovieController
         //Inserción de pelicula
         $respMovie = $this->movieModel->newMovie($arrayMovie);
 
+        //Obtener último id registrado de pelicula
+        $lastId = $thisModel->getLastId();
+
         //Inserción detalle category_movie
+        $respCategoryMovie = $this->movieModel->saveCategoryMovie($arrayCategories, $lastId);
+        
+        //Validar si las inserciones fueron correctas
+        $arrayResp =[];
+        if($respMovie == true && $respCategoryMovie == true)
+        {
+            $arrayResp = 
+            [
+                'error' => true,
+                'message' => 'Error creando la pelicula'
+            ];
+        }
+        else
+        {
+            echo json_encode($arrayResp);
+        }
+        return;
     }
 
     //Metodo para modificación de datos
